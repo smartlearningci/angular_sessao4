@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "app": {
+    "blog": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/app",
+            "outputPath": "dist/blog",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -25,9 +25,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/assets/assets/css/theme-1.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/assets/fontawesome/js/all.min.js",
+              "src/assets/assets/plugins/popper.min.js",
+              "src/assets/assets/plugins/bootstrap/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -60,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "app:build:production"
+              "browserTarget": "blog:build:production"
             },
             "development": {
-              "browserTarget": "app:build:development"
+              "browserTarget": "blog:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "app:build"
+            "browserTarget": "blog:build"
           }
         },
         "test": {
@@ -96,6 +100,6 @@
     }
   },
   "cli": {
-    "analytics": "94a3f1b7-7c1f-4159-a5b4-17a780b0a762"
+    "analytics": false
   }
 }
